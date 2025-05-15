@@ -6,6 +6,7 @@ package _01_random._2_rock_paper_scissors;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Random;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -70,7 +71,7 @@ public class RockPaperScissors extends JPanel implements ActionListener{
     public static void main(String[] args) {
         new RockPaperScissors().run();
     }
-
+Random ran = new Random();
     @Override
     public void actionPerformed(ActionEvent e) {
         
@@ -81,7 +82,7 @@ public class RockPaperScissors extends JPanel implements ActionListener{
 	    
         //2. Change the value of opponentSelection to be a random number between 0 and 2; 
         int opponentSelection = 0;
-        
+        opponentSelection = ran.nextInt( 2 - 0 +1) ;
         //3. Run the program again. Is the result different?
  
         int selection = 0;
