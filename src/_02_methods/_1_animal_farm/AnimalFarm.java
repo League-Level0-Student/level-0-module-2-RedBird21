@@ -16,24 +16,49 @@ public class AnimalFarm {
 	 * If you cannot play sound on this computer, set canPlaySounds to false.
 	 * If you are not sure, ask your teacher 
 	 * *****************/
-	boolean canPlaySounds = true;
+	static boolean canPlaySounds = true;
 
 	
 	public static void main(String[] args) {
-		new AnimalFarm().animals();
-	}
-	
-	void animals() {
-
+		
 		/* 1. Ask the user which animal they want, then see and hear 
 		 *    the animal they chose using one of the methods below.
 		*/			 
 			
 		/* 2. Make it so that the user can keep entering new animals. */
+		
+		
+		
+		
+		new AnimalFarm().animals();
+	}
+	
+		
+	
+	void animals() {
+
+		String animalPick = JOptionPane.showInputDialog("what animal in my farm would you like to hear and see; a duck, a dog, a cat, a llama, or a cow");
+			if (animalPick.contains("ow")) {
+				moo();
+			}
+			if (animalPick.contains("uck")) {
+				quack();
+			}
+			if (animalPick.contains("og")) {
+				woof();
+			}
+			if (animalPick.contains("at")) {
+				meow();
+			}
+			if (animalPick.contains("llama")) {
+				llamaScream();
+			} else {
+				JOptionPane.showMessageDialog(null, "sorry, but I don't have that animal on my farm");
+			}
 
 	}
 
-	void moo() {
+ 	void moo() {
 		playNoise(mooFile);
 		showImage(cowIcon);
 	}
@@ -63,9 +88,9 @@ public class AnimalFarm {
 	
 
 	/* Ignore this stuff */
-	String path = "src/_02_methods/_1_animal_farm/";
+	static String path = "src/_02_methods/_1_animal_farm/";
 	String quackFile = "quack.wav";
-	String mooFile = "moo.wav";
+	static String mooFile = "moo.wav";
 	String woofFile = "woof.wav";
 	String meowFile = "meow.wav";
 	String llamaFile = "llama.wav";
@@ -73,13 +98,13 @@ public class AnimalFarm {
 	ImageIcon catIcon;
 	ImageIcon dogIcon;
 	ImageIcon duckIcon;
-	ImageIcon cowIcon;
+    ImageIcon cowIcon;
 	
-	private void showImage (ImageIcon icon) {
+	private static void showImage (ImageIcon icon) {
 			JOptionPane.showMessageDialog(null, "", "You chose", 0, icon);
 	}
 	
-	private void playNoise(String soundFile) {
+	private static void playNoise(String soundFile) {
 		if (canPlaySounds) {	
 			File sound = new File(path+soundFile);
 			if (sound.exists()) {

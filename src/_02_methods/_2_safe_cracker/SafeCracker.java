@@ -22,6 +22,7 @@ public class SafeCracker {
 	
 	public static void main(String[] args) {
 		new SafeCracker().crackTheSafe();
+		
 	}
 
 	void crackTheSafe() {

@@ -10,10 +10,14 @@ public class LotteryNumbers {
 		// TODO Auto-generated method stub
 
 		Random ran = new Random();
-int randomLotteryTicket = ran.nextInt(99 - 1 + 1) + 1;
+int one = ran.nextInt(99 - 1 + 1) + 1;
+int two = ran.nextInt(99 - 1 + 1) + 1;
+int three = ran.nextInt(99 - 1 + 1) + 1;
+int four = ran.nextInt(99 - 1 + 1) + 1;
+JOptionPane.showMessageDialog(null, "this is your lottery, or raffle ticket,");
+JOptionPane.showMessageDialog(null,  one + " " + two + " " + three + " " + four );
+ 	
 
-int lala = randomLotteryTicket;
-JOptionPane.showMessageDialog(null, lala); 	
 }
 	}
 
